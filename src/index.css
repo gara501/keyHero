@@ -1,4 +1,9 @@
 
+body {
+  font-family: 'Press Start 2P', cursive;
+  overflow: hidden;
+}
+
 .button {
 	box-shadow: inset 0px 1px 0px 0px #ffffff;
 	background-color:#f9f9f9;
@@ -7,7 +12,6 @@
 	display: inline-block;
 	cursor: pointer;
 	color:#666666;
-	font-family: Arial;
 	font-size: 25px;
 	font-weight: bold;
 	padding: 12px 34px;
@@ -64,7 +68,7 @@
 
 .game-container {
   display: flex;
-  height: 80vh;
+  height: 75vh;
   width: 100%;
 }
 
@@ -81,6 +85,7 @@
 .game-indicators {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 100px;
   width: 100%
 }
 
@@ -113,5 +118,32 @@
 
 .points {
   margin-top: 50px;
-  font-size: 1.5rem;
+  font-size: 1rem;
+}
+
+/* GameOver Scene */
+
+.gameover h2 {
+  font-size: 3rem;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.gameover.active {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: space-between;
+}
+
+/* Enemy component */
+.enemy {
+  position: absolute;
+}
+
+.laser {
+  display: block;
+  bottom: 40px;
+  left: 15px;
+  position: absolute;
 }

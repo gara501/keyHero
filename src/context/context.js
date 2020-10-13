@@ -6,12 +6,16 @@ const AliensProvider = (props) => {
 
 	const [isRunning, setIsRunning] = useState(false);
 	const [currentScene, setCurrentScene] = useState('intro');
-	const [currentLife, setCurrentLife] = useState(6);
+	const [currentLife, setCurrentLife] = useState(4);
 	const [currentPoints, setCurrentPoints] = useState(0);
 	const [shoot, setShoot] = useState({});
 	const [enemyActive, setEnemyActive] = useState(null);
-	const [currentSpeed, setCurrentSpeed] = useState(1000);
-	const [player, setPlayer] = useState({});	
+	const [currentSpeed, setCurrentSpeed] = useState(8000);
+	const [activePlayers, setActivePlayers] = useState([
+		{id: 's1', state: true}, 
+		{id: 's2', state: true},
+		{id: 's3', state: true},
+		{id: 's4', state: true}]);
 
 	return (
 		<AliensContext.Provider
@@ -30,8 +34,8 @@ const AliensProvider = (props) => {
 				setEnemyActive,
 				currentSpeed,
 				setCurrentSpeed,
-				player,
-				setPlayer
+				activePlayers,
+				setActivePlayers
 			}}
 		>
 			{props.children}

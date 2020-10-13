@@ -6,7 +6,7 @@ function Life() {
 	const { currentLife } = useContext(AliensContext);
 
 	const fillBars = () => {
-		const bars = [1,2,3,4,5,6];
+		const bars = [1,2,3,4];
 		const barsDom = bars.map((item, index) => 
 			index < currentLife ? 
 				<div className="block full" key={index}></div>:

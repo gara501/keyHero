@@ -1,16 +1,19 @@
 import React from 'react';
-import KeyHeroProvider from './context/context';
+import AliensProvider from './context/context';
 import Game from './components/Game';
 import Intro from './components/Intro';
+import GameOver from './components/GameOver';
 
 function App() {
+  
   return (
-    <KeyHeroProvider>
-    <div className="container">
-      <Intro />
-      <Game />
-    </div>
-    </KeyHeroProvider>
+    <AliensProvider>
+      <div className="container">
+        <Intro />
+        <Game />
+        <GameOver />
+      </div>
+    </AliensProvider>
   );
 }
 

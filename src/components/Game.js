@@ -19,7 +19,8 @@ function Game() {
 		setCurrentScene,
 		currentLife,
 		setIsRunning,
-		setEnemyActive
+		setEnemyActive,
+		activePlayers
 	} = useContext(AliensContext);
 	
 	const isActive = currentScene === 'game' ? 'active': '';
@@ -43,8 +44,14 @@ function Game() {
 
 
 	const randomEnemy = () => {
-		const enemy = Math.floor(Math.random() * 4) + 1;
-		setEnemyActive(`enem${enemy}`);
+		const activeElements = activePlayers.filter(item => item.state);
+		let randomId = 'enem1';
+		console.log(activeElements, activeElements.length);
+		if (activeElements.length > 0) {
+			const randomEnemy = activeElements[Math.floor(Math.random() * activeElements.length)];
+			randomId = randomEnemy.id.replace('s', 'enem');
+		}
+		setEnemyActive(randomId);
 	}
 
   return (

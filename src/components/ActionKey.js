@@ -28,7 +28,6 @@ function ActionKey({id, laserId, image, enemyId, enemyImage}) {
 			if (animation.direction === 'normal') {
 				animation.reverse();
 				setCurrentPoints(currentPoints+1);
-				console.log(shoot)
 				setShoot({id: laserId, hit: true});
 	
 				// Increase difficulty each 5 points

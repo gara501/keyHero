@@ -1,14 +1,13 @@
 import React, { useContext, useRef } from 'react';
 import { AliensContext } from '../context/context';
 import anime from 'animejs/lib/anime.es.js';
-import enem2 from '../img/enem2.png';
 
 function GameOver() {
 
 	const ovniRef = useRef(null);
 
 	const { 
-		currentScene
+		currentScene, assets
  	} = useContext(AliensContext);
 
 	const startGame = (e) => {
@@ -27,14 +26,12 @@ function GameOver() {
 		loop: true
 	});
 
-	
-
 	const isActive = currentScene === 'gameover' ? 'active': '';
 
   return (
 		<div className={isActive + ' scene gameover'}>
 			<h2>Game Over</h2>
-			<img ref={ovniRef} src={enem2} alt="aliens" />
+			<img ref={ovniRef} src={assets.enem2} alt="aliens" />
 			<button className="button" onClick={startGame}>Reiniciar</button>
 		</div>
   );

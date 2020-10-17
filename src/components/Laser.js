@@ -1,5 +1,6 @@
 import React, {useRef, useEffect, useContext} from 'react';
 import { AliensContext } from '../context/context';
+import anime from 'animejs/lib/anime.es.js';
 import laser from '../img/laser.png';
 
 function Laser({id}) {
@@ -9,27 +10,21 @@ function Laser({id}) {
 
 	useEffect(() => {
 		if (shoot.hit && shoot.id === id) {
-			let laserAnimation = laserRef.current.animate(
-				[
-					{ transform: 'translateY(-70vh)', opacity: '0' }
-				],
-				{
-					duration: 200,
-					iterations: 1,
-					
+			anime({
+				targets: laserRef.current,
+				translateY: '-50vh',
+				opacity: 0,
+				duration: 500,
+				complete: function(anim) {
+					console.log(anim);
+					this.reset();
+					setShoot({id: id, hit: false});
 				}
-			);
-			laserAnimation.play();
-			laserAnimation.onfinish = () => {	
-				setShoot({id: id, hit: false});
-			}
+			});
 		}
-	})
+		
+	});
 
-
-	
-
-	
   return (
 		<div id={id} className="laser" ref={laserRef}>
 			<img src={laser} alt='laser'/>

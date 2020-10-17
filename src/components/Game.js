@@ -1,20 +1,13 @@
 import React, { useContext, useEffect } from 'react';
 import { AliensContext } from '../context/context';
-import s1 from '../img/s1.png';
-import s2 from '../img/s2.png';
-import s3 from '../img/s3.png';
-import s4 from '../img/s4.png';
-import enem1 from '../img/enem1.png';
-import enem2 from '../img/enem2.png';
-import enem3 from '../img/enem3.png';
-import enem4 from '../img/enem4.png';
 import Life from './Life';
 import Points from './Points';
 import ActionKey from './ActionKey';
 
 function Game() {
 
-	const { 
+	const {
+		assets,
 		currentScene,
 		setCurrentScene,
 		currentLife,
@@ -65,8 +58,8 @@ function Game() {
 					<ActionKey 
 						id="s1"
 						laserId="l1"
-						image={s1} 
-						enemyImage={enem1}
+						image={assets.s1} 
+						enemyImage={assets.enem1}
 						enemyId="enem1"
 					/>
 				</div>
@@ -74,8 +67,8 @@ function Game() {
 					<ActionKey 
 						id="s2"
 						laserId="l2"
-						image={s2} 
-						enemyImage={enem2}
+						image={assets.s2} 
+						enemyImage={assets.enem2}
 						enemyId="enem2"
 					/>
 				</div>
@@ -83,8 +76,8 @@ function Game() {
 					<ActionKey 
 						id="s3"
 						laserId="l3"
-						image={s3} 
-						enemyImage={enem3}
+						image={assets.s3} 
+						enemyImage={assets.enem3}
 						enemyId="enem3"
 					/>
 				</div>
@@ -92,8 +85,8 @@ function Game() {
 					<ActionKey 
 						id="s4"
 						laserId="l4"
-						image={s4} 
-						enemyImage={enem4}
+						image={assets.s4} 
+						enemyImage={assets.enem4}
 						enemyId="enem4"
 					/>
 				</div>
